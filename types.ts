@@ -110,6 +110,39 @@ export interface FAQItem extends CosmicObject {
   }
 }
 
+// User type (stored in Cosmic CMS)
+export interface User extends CosmicObject {
+  type: 'users'
+  metadata: {
+    email: string
+    password_hash: string
+    name: string
+    avatar_url?: string
+    api_key?: string
+    created_date: string
+  }
+}
+
+// Chat Message type
+export interface ChatMessage {
+  id: string
+  role: 'user' | 'assistant'
+  content: string
+  timestamp: number
+}
+
+// Chat Session type (stored in Cosmic CMS)
+export interface ChatSession extends CosmicObject {
+  type: 'chat-sessions'
+  metadata: {
+    user_id: string
+    mode_slug: string
+    messages: ChatMessage[]
+    created_date: string
+    last_updated: string
+  }
+}
+
 // Cosmic API response type
 export interface CosmicResponse<T> {
   objects: T[]
@@ -137,4 +170,12 @@ export function isDocumentationPage(obj: CosmicObject): obj is DocumentationPage
 
 export function isFAQItem(obj: CosmicObject): obj is FAQItem {
   return obj.type === 'faq-items'
+}
+
+export function isUser(obj: CosmicObject): obj is User {
+  return obj.type === 'users'
+}
+
+export function isChatSession(obj: CosmicObject): obj is ChatSession {
+  return obj.type === 'chat-sessions'
 }

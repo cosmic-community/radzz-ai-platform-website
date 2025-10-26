@@ -89,7 +89,7 @@ export default async function HomePage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link 
-                href="/docs" 
+                href="/auth/signup" 
                 className="px-8 py-3 bg-accent-blue hover:bg-accent-purple rounded-lg font-semibold transition-all duration-300 glow-border"
               >
                 Get Started
@@ -219,7 +219,7 @@ export default async function HomePage() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link 
-              href="/docs/getting-started-with-radzz" 
+              href="/auth/signup" 
               className="px-8 py-3 bg-accent-blue hover:bg-accent-purple rounded-lg font-semibold transition-all duration-300 glow-border"
             >
               Get Started

@@ -26,10 +26,16 @@ export default function Header() {
               FAQ
             </Link>
             <Link 
-              href="/docs/getting-started-with-radzz" 
+              href="/auth/login" 
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Login
+            </Link>
+            <Link 
+              href="/auth/signup" 
               className="px-4 py-2 bg-accent-blue hover:bg-accent-purple rounded-lg font-semibold transition-all duration-300"
             >
-              Get Started
+              Sign Up
             </Link>
           </nav>
 
